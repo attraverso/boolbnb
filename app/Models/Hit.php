@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,6 +10,6 @@ class Hit extends Model
         'house_id', 'created_at'
     ];
     public function house() {
-        return $this->belongsTo('App\House');
+        return $this->belongsTo('App\Models\House');
     }     
 }

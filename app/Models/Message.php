@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +11,6 @@ class Message extends Model
     ];
     
     public function house() {
-        return $this->belongsTo('App\House');
+        return $this->belongsTo('App\Models\House');
     }        
 }

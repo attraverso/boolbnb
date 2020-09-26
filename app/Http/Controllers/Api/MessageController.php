@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Message;
+use App\Models\Message;
 
 class MessageController extends Controller
 {

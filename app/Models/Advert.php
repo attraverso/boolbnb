@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Advert extends Model
 {
     public function payments() {
-        return $this->hasMany('App\Payment');
+        return $this->hasMany('App\Models\Payment');
     }     
 }

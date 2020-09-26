@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,22 +10,22 @@ class House extends Model
         'user_id', 'title', 'nr_of_rooms', 'nr_of_beds', 'nr_of_bedrooms', 'nr_of_bathrooms', 'square_mt', 'address', 'latitude', 'longitude', 'description', 'advertised', 'visible'
     ];
     public function user() {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Models\User');
     }     
 
     public function payments() {
-        return $this->hasMany('App\Payment');
+        return $this->hasMany('App\Models\Payment');
     }     
 
     public function hits() {
-        return $this->hasMany('App\Hit');
+        return $this->hasMany('App\Models\Hit');
     }     
 
     public function messages() {
-        return $this->hasMany('App\Message');
+        return $this->hasMany('App\Models\Message');
     }     
 
     public function services() {
-        return $this->belongsToMany('App\Service');
+        return $this->belongsToMany('App\Models\Service');
     }
 }

@@ -4,9 +4,9 @@ namespace App\Http\Controllers\upr;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Payment;
-use App\House;
-use App\Advert;
+use App\Models\Payment;
+use App\Models\House;
+use App\Models\Advert;
 use Illuminate\Support\Facades\Auth;
 use Braintree\Transaction as Transaction;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,10 +9,10 @@ class HouseService extends Model
 	protected $table = 'house_service';
 
     public function houses() {
-		$this->belongsToMany('App\House');
+		$this->belongsToMany('App\Models\House');
 	}
  
 	public function services() {
-		$this->belongsToMany('App\Service');
+		$this->belongsToMany('App\Models\Service');
 	}
 }

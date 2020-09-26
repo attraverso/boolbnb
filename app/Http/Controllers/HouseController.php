@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\House;
-use App\Payment;
-use App\Service;
-use App\Hit;
+use App\Models\House;
+use App\Models\Payment;
+use App\Models\Service;
+use App\Models\Hit;
 use Braintree\Transaction as Transaction;
 use Illuminate\Support\Carbon;
 
@@ -87,13 +87,12 @@ class HouseController extends Controller
 	public function search(Request $request) {
 		//get the address inputed in homepage and show it in searchbar in search page
 		$userQuery = $request->user_search_address;
-		//TODO: randomize houses
-		$houses = House::where('visible', '1')
+				$houses = House::where('visible', '1')
                     ->where('advertised', '1')
                     ->inRandomOrder()
 					->limit(3)
 					->get();
-		//get all services, to print filter input items
+		//get all services, to print home filter input items in the page
 		$services = Service::all();
 		$data = [
 			'userQuery' => $userQuery,
