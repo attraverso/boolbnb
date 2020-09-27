@@ -79,15 +79,14 @@ function buildQueryString() {
 
 /** call Api\HouseController */
 function callOwnHouseAPI(query) {
-	console.log('callOwnHouseAPI was called!');
 	$.ajax({
 		'url': OWN_HOUSES_API_URL + query,
 		'method': 'GET',
 		'traditional': true,
 		'success': function(data) {
 			/** remove all search cards from view */
-			$('.handle-house-card').remove();
-			if (data != '[]') {
+			$('.houses-grid-results').empty();
+			if (data.data.length != 0) {
 				for (let i = 0; i < data.data.length; i++) {
 					const house = data.data[i];
 						
@@ -122,7 +121,7 @@ function callOwnHouseAPI(query) {
 					}
 				}
 			} else {
-				//TODO: add 'there are no matches' message
+				$('.houses-grid-results').append('It looks like none of our homes matches your search.');
 			};
 		},
 			'error': function(e) {
