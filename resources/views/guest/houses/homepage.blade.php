@@ -9,11 +9,10 @@
             <div class="home">
                 <div class="overlay"></div>
                 <div class="col-lg-6">
-					<form action="{{ route('guest.search') }}" method="GET" class="search-house input-group">
-						<input type="text" class="form-control" placeholder="Search..." aria-describedby="button-addon2" name="user_search_address">
-                        <div class="input-group-append">
-                            <button class="btn" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
-                        </div>
+					<form action="{{ route('guest.search') }}" method="GET" class="search-house form-group">
+						<div class="house-autosearch" value="{{ old('address')}}" data-search-source="homepage"></div>
+						<input type="text" name="longitude" data-coordinates-long="" hidden>
+						<input type="text" name="latitude" data-coordinates-lat="" hidden>
                     </form>
                 </div>
             </div>

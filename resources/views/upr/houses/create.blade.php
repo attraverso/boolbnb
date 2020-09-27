@@ -35,7 +35,7 @@
 						<textarea type="text" name="description" class="form-control" id="house-description" placeholder="Description">{{ old('description') }}</textarea>
 					</div>
 					<div class="form-group">
-						<label for="house-address" class="house-autosearch" value="{{ old('address')}}">Address</label>
+						<label for="house-address" class="house-autosearch" data-search-source="create">Address</label>
 
 					</div>
 					<div class="form-group">

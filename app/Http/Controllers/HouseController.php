@@ -17,7 +17,7 @@ class HouseController extends Controller
 	 * Show freshly updated advertised homes in view
 	 */
     public function homepage() {
-		/* get all unconfirmed payments */
+		/* UPDATE BRAINTREE PAYMENT STATUSES - get all unconfirmed payments */
         $payments = Payment::where('status', '=', 'submitted_for_settlement')->get();
 		foreach ($payments as $payment) {
 			$transaction = Transaction::find($payment->payment_id);
@@ -86,16 +86,19 @@ class HouseController extends Controller
 	 */
 	public function search(Request $request) {
 		//get the address inputed in homepage and show it in searchbar in search page
-		$userQuery = $request->user_search_address;
-				$houses = House::where('visible', '1')
-                    ->where('advertised', '1')
-                    ->inRandomOrder()
-					->limit(3)
-					->get();
+		// $userQuery = $request->user_search_address;
+		$longitude = $request->longitude;
+		$latitude = $request->latitude;
+		$houses = House::where('visible', '1')
+			->where('advertised', '1')
+			->inRandomOrder()
+			->limit(3)
+			->get();
 		//get all services, to print home filter input items in the page
 		$services = Service::all();
 		$data = [
-			'userQuery' => $userQuery,
+			'longitude' => $longitude,
+			'latitude' => $latitude,
 			'houses' => $houses,
 			'services' => $services,
 		];

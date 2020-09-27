@@ -9,12 +9,11 @@
                     <div class="overlay"></div>
                     <div class="col-lg-6">
                         {{-- SEARCHBAR --}}
-                        <div class="search-house input-group">
-                            <input type="text" class="form-control searchbars" id="guest-search" placeholder="Search City"data-user-query="{{ $userQuery }}">
-                            <div class="input-group-append">
-                                <button type="button" class="btn search-btn" id="guest-search-btn"><i class="fas fa-search search-btn" data-placement="searchguest"></i></button>
-                            </div>
-                        </div>
+                        <form action="{{ route('guest.search') }}" method="GET" class="search-house form-group">
+							<div class="house-autosearch" value="{{ old('address')}}" data-search-source="search"></div>
+							<input type="text" name="longitude" data-coordinates-long="{{ $longitude }}" hidden>
+							<input type="text" name="latitude" data-coordinates-lat="{{ $latitude }}" hidden>
+						</form>
                     </div>
                 </div>
             </div>

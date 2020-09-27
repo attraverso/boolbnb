@@ -32,7 +32,7 @@
                         <textarea type="text" name="description" class="form-control" id="house-description" placeholder="Description">{{ old('description', $house->description)}}</textarea>
                     </div>
                     <div class="form-group">
-						<label for="house-address" class="house-autosearch">Current address: {{ old('address', $house->address)}}</label>
+						<label for="house-address" class="house-autosearch" data-search-source="edit">Address</label>
                     </div>
 					<div class="form-group">
 						<label for="image">Add image</label>
