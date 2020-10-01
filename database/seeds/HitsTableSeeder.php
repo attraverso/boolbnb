@@ -1,7 +1,7 @@
 <?php
 
-use App\Hit;
-use App\House;
+use App\Models\Hit;
+use App\Models\House;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use Illuminate\Support\Facades\DB;

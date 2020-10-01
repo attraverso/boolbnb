@@ -1,7 +1,6 @@
 <?php
 
-use App\Advert;
-use App\Payment;
+use App\Models\Advert;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 

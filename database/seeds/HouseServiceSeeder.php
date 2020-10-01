@@ -2,9 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
-use App\House;
-use App\Service;
-use App\HouseService;
+use App\Models\House;
+use App\Models\Service;
 
 class HouseServiceSeeder extends Seeder
 {

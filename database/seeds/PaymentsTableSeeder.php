@@ -1,8 +1,8 @@
 <?php
 
-use App\Payment;
-use App\House;
-use App\Advert;
+use App\Models\Payment;
+use App\Models\House;
+use App\Models\Advert;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 
