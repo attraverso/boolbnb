@@ -15,5 +15,9 @@ class MessageController extends Controller
             'count' => $messages->count(),
             'data' => $messages,
         ]);
-    }
+	}
+	
+	public function markAsRead($id) {
+
+	}
 }

@@ -17,7 +17,8 @@ class CreateMessagesTable extends Migration
             $table->id();
             $table->foreignId('house_id');
             $table->string('sender_email', 360);
-            $table->string('message', 2000);
+			$table->string('message', 2000);
+			$table->boolean('is_read');
             // Foreign key reference
             $table->foreign('house_id')->references('id')->on('houses')->onDelete('cascade');
             $table->timestamps();

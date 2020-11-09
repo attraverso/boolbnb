@@ -9,7 +9,7 @@ import "bootstrap";
 require('./bootstrap');
 require('./filters_search');
 // require('./guest/show');
-require('./guest/messages');
+require('./upr/messages');
 require('./upr/header');
 require('./upr/adv');
 require('./_tomtom');

@@ -46,7 +46,7 @@
         -webkit-box-orient: vertical;
     }
 }
-.visible{
+.unread{
     background-color: #B8F0F5;
     cursor: pointer;
 }
@@ -66,7 +66,7 @@
         margin-top: 20px;
     }
 }
-.active{
+.descr-active{
     display: block;
 }
 .email-time {

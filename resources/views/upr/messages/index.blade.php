@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="messages col-12 col-lg-5">
                         @foreach ($messages as $message)
-                            <div class="message @if ($loop->first) visible @endif">
+                            <div class="message @if ($message->is_read == 0) unread @endif">
                                 <h2 class="hidden">Apartment {{ $message->house_id }}</h2>
                                 <a href="mailto:{{ $message->sender_email }}">{{ $message->sender_email }}</a>
                                 <p class="transition">{{ $message->message }} </p>
@@ -24,7 +24,7 @@
 
                 <div class="description-message col-lg-7">
                     @foreach ($messages as $message)
-                        <div class="description @if ($loop->first) active @endif">
+                        <div class="description @if ($loop->first) descr-active @endif">
                             <div class="email-time">
                                 <a href="mailto:{{ $message->sender_email }}">{{ $message->sender_email }}</a>
                                 <span>{!! htmlspecialchars_decode(date('j<\s\up>S</\s\up> F Y h:i A', strtotime($message->created_at))) !!}</span>
