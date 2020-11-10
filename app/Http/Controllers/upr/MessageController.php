@@ -16,7 +16,10 @@ class MessageController extends Controller
         $messages = DB::table('messages')
             ->join('houses', 'houses.id', '=', 'messages.house_id')
             ->where('houses.user_id', '=', Auth::user()->id)
-            ->orderBy('messages.created_at', 'DESC')
+			->orderBy('messages.created_at', 'DESC')
+			//problem is, I've got zero clue as to why this works D:
+			//https://github.com/laravel/framework/issues/4962
+			->select('messages.*')
             ->get();
 
         return view('upr.messages.index', compact('messages'));

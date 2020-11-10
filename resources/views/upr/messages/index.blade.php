@@ -11,7 +11,11 @@
                 <div class="row">
                     <div class="messages col-12 col-lg-5">
                         @foreach ($messages as $message)
-                            <div class="message @if ($message->is_read == 0) unread @endif">
+							<div class="message
+								@if ($loop->first) descr-active @endif
+								@if ($message->is_read == 0) unread @endif
+							">
+								<span data-message-id="{{$message->id}}">{{$message->id}}</span>
                                 <h2 class="hidden">Apartment {{ $message->house_id }}</h2>
                                 <a href="mailto:{{ $message->sender_email }}">{{ $message->sender_email }}</a>
                                 <p class="transition">{{ $message->message }} </p>

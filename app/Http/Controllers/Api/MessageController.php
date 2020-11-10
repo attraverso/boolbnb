@@ -18,6 +18,13 @@ class MessageController extends Controller
 	}
 	
 	public function markAsRead($id) {
+		$message = Message::find($id);
+		$message->is_read = 1;
+		$message->update();
 
+		return response()->json([
+			'success' => true,
+			'data' => $message,
+		]);
 	}
 }
